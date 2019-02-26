@@ -11,7 +11,7 @@ Implement my Viterbi Algorithm with Python3.
 
 - HMM: 超級沒效率，但較精準
 
-每個 state 都會因為前面有 N 種不同的 state , 而增加 N 種不同的序列, 這樣一直增加, 序列的數量呈指數函數成長, 最後再一起比誰的機率比較大。
+每個 state 都會因為前面有 N 種不同的 states , 而增加 N 種不同的序列, 這樣一直增加, 序列的數量呈指數函數成長, 最後再一起比誰的機率比較大。
 
 
 - Viterbi: 比較有效率，精準度雖不高，但CP值高
@@ -38,8 +38,8 @@ transition_probabilities = {
                     'fever' : {'health': 0.4, 'fever': 0.6}
                     }
 emission_probabilities = {
-                    'health' : {'normal': 0.5, 'cold': 0.4, 'fever': 0.1},
-                    'fever': {'normal': 0.1, 'cold': 0.3, 'fever': 0.6}
+                    'health' : {'normal': 0.5, 'cold': 0.4, 'dizzy': 0.1},
+                    'fever': {'normal': 0.1, 'cold': 0.3, 'dizzy': 0.6}
                     }
 ```
 
@@ -51,13 +51,13 @@ myViterbi = Viterbi(states, start_probabilities,
 
 #### 開始看診
 ```
-obs_1 = ('normal', 'cold', 'fever')   # features that
+obs_1 = ('normal', 'cold', 'dizzy')   # features that
 dignosis = myViterbi.run(obs_1)
 ```
 
 #### 列印診斷報告
 ```
-print_report(patient_no, observations, process_result)
+print_report(patient_no, observations, process_results)
 ```
 
 
